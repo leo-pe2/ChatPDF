@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
+  </head>
+  <body>
+    <!-- Datei-Upload für PDF -->
+    <div id="file-upload-section">
+      <!-- Empty but keeping for consistent spacing -->
+    </div>
+
+    <!-- Hauptcontainer: links PDF, rechts Chat -->
+    <div id="main-container">
+      <!-- Chat-Anzeige -->
+      <div id="chat-container">
+        <div id="chat-messages"></div>
+
+        <!-- Texteingabe -->
+        <div id="input-container">
+          <textarea 
+            id="userInput" 
+            rows="1"
+            placeholder="Ask me something..."
+          ></textarea>
+          <div class="input-controls">
+            <label for="pdfInput" class="file-button">
+              <i class="fas fa-plus"></i>
+              <input type="file" id="pdfInput" accept="application/pdf" hidden />
+            </label>
+            <div class="model-selector">
+              <button id="prevModel" class="model-btn"><i class="fas fa-chevron-left"></i></button>
+              <span id="currentModel">gpt-4o</span>
+              <button id="nextModel" class="model-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <button id="sendBtn">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF-Anzeige -->
+      <div id="pdf-container">
+        <div id="pdf-viewer"></div>
+      </div>
+    </div>
+
+    <!-- TypeScript compiled JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
