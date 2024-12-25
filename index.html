@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>PDF Chat</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Add PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -20,18 +19,15 @@
     </script>
   </head>
   <body>
-    <!-- Datei-Upload für PDF -->
     <div id="file-upload-section">
       <!-- Empty but keeping for consistent spacing -->
     </div>
 
-    <!-- Hauptcontainer: links PDF, rechts Chat -->
     <div id="main-container">
-      <!-- Chat-Anzeige -->
       <div id="chat-container">
         <div id="chat-messages"></div>
 
-        <!-- Texteingabe -->
+        
         <div id="input-container">
           <textarea 
             id="userInput" 
@@ -55,7 +51,7 @@
         </div>
       </div>
 
-      <!-- PDF-Anzeige -->
+    
       <div id="pdf-container">
         <div id="pdf-viewer"></div>
       </div>
