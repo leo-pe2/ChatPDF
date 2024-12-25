@@ -10,34 +10,23 @@ Preview:
 
 Getting Started
 
-Prerequisites
-	•	API Key:
-Obtain an API key from OpenAI. Insert it into the script file under the OPENAI_API_KEY constant.
-	•	Dependencies:
-The project relies on the following external libraries:
-	•	pdf.js for PDF rendering
-	•	OpenAI API for natural language processing
 
 Usage
-	1.	"Upload" a PDF: Click the “Upload PDF” button and select a file from your computer.
-	2.	Ask Questions: Use the input box to type questions related to the PDF content and press Enter.
-	3.	Switch Models: Use the model navigation buttons to toggle between available OpenAI models.
+1. "Upload" a PDF: Click the “Upload PDF” button and select a file from your computer.
+2. Ask Questions: Use the input box to type questions related to the PDF content and press Enter.
+3. Switch Models: Use the model navigation buttons to toggle between available OpenAI models.
 	
 
 Technologies Used
-	•	Frontend: HTML, CSS, JavaScript
-	•	PDF Parsing: pdf.js
-	•	AI Integration: OpenAI API
+• Frontend: HTML, CSS, JavaScript
+• PDF Parsing: pdf.js
+• AI Integration: OpenAI API
 
-Known Issues and Limitations
-	•	The PDF content is fully preloaded, which may result in delays for large files.
-	•	The application does not currently support advanced PDF features such as annotations or form interactions.
 
 Future Improvements
-	•	Add drag-and-drop support for PDF uploads.
-	•	Enhance the chat interface with more intuitive controls
-	•	Implement caching for faster response times when revisiting similar documents.
-  • Message history...
+• Add drag-and-drop support for PDF uploads.
+• Enhance the chat interface with more intuitive controls
+• Implement caching for faster response times when revisiting similar documents.
 
 License
 
