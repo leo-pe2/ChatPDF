@@ -74,7 +74,6 @@ textarea.addEventListener('input', function() {
         const container = document.getElementById('input-container');
         container.style.height = (newHeight + 30) + 'px';
         
-        // Always scroll to show latest input when at max height
         if (this.scrollHeight > maxHeight) {
             this.style.overflowY = 'scroll';
             requestAnimationFrame(() => {
@@ -87,11 +86,9 @@ textarea.addEventListener('input', function() {
     }
 });
 
-// Replace both keydown and keyup handlers with this single handler
 textarea.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         if (event.shiftKey) {
-            // Allow Shift+Enter for line break - default behavior
             return;
         }
         // Normal Enter
@@ -111,7 +108,6 @@ const pdfViewerElement = document.getElementById('pdf-viewer');
 
 let currentPdfContent = "";
 
-// Function to load PDF content
 async function loadPdfContent(pdfDoc) {
     let fullText = "";
     for (let i = 1; i <= pdfDoc.numPages; i++) {
@@ -122,7 +118,6 @@ async function loadPdfContent(pdfDoc) {
     currentPdfContent = fullText;
 }
 
-// Update the existing PDF input event listener
 pdfInput.addEventListener('change', async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -138,7 +133,6 @@ pdfInput.addEventListener('change', async (e) => {
     reader.readAsArrayBuffer(file);
 });
 
-// Simplified render function with fixed scale
 async function renderPage(pageNum) {
     const page = await pdfDoc.getPage(pageNum);
     const dpiScale = window.devicePixelRatio || 1;
@@ -282,7 +276,6 @@ function addLoadingMessage() {
     const loadingDiv = document.createElement("div");
     loadingDiv.classList.add("message", "bot-message", "loading-bubble");
     
-    // Add three dots
     for (let i = 0; i < 3; i++) {
         const dot = document.createElement("div");
         dot.classList.add("loading-dot");
@@ -301,7 +294,6 @@ function addErrorMessage(errorText) {
     chatMessages.appendChild(errorDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
     
-    // Automatically remove error after 5 seconds
     setTimeout(() => {
         errorDiv.remove();
     }, 5000);
